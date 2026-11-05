@@ -92,7 +92,7 @@ background:radial-gradient(50% 40% at 0% 100%,rgba(190,230,205,.45),transparent)
 .cs-h{font-size:5.6cqw;font-weight:800;text-align:center;margin:0 0 3cqw;line-height:1.05}.cs-h em{font-style:normal;color:#f8c82e}
 .cs-stage{display:flex;align-items:center;gap:14px;max-width:900px;margin:0 auto}
 .cs-view{overflow:hidden;flex:1;border-radius:min(24px,2.2cqw);transition:height .35s ease}
-.cs-track{display:flex;align-items:flex-start;transition:transform .45s cubic-bezier(.3,.7,.2,1)}
+.cs-track{display:flex;gap:12px;align-items:flex-start;transition:transform .45s cubic-bezier(.3,.7,.2,1)}
 .cs-k{flex:0 0 100%;border-radius:min(24px,2.2cqw)!important;background:linear-gradient(#fdf8ee 0 calc(100% - 24px),#0b6e47 calc(100% - 24px))!important;display:flex;flex-direction:column;background:#fdf8ee;border-radius:24px;overflow:hidden;color:#0b4a31}
 .cs-pp{line-height:0}.cs-pp svg{width:100%;height:30px;display:block}
 .cs-hd{display:flex;justify-content:space-between;align-items:center;padding:14px 26px 0}
@@ -126,7 +126,7 @@ tr.innerHTML=D.map((d,i)=>`<article class="cs-k"><div class="cs-pp">${PIC}</div>
 root.querySelector('.cs-n').textContent=D.length;
 dots.innerHTML=D.map((_,i)=>`<button aria-label="Calaverita ${i+1}"></button>`).join('');
 let i=0;const K=tr.children;
-function go(n){i=Math.max(0,Math.min(D.length-1,n));tr.style.transform=`translateX(${-i*100}%)`;vw.style.height=K[i].offsetHeight+'px';
+function go(n){i=Math.max(0,Math.min(D.length-1,n));tr.style.transform=`translateX(calc(${-i*100}% - ${i*12}px))`;vw.style.height=K[i].offsetHeight+'px';
 root.querySelector('.cs-i').textContent=i+1;[...dots.children].forEach((b,j)=>b.classList.toggle('on',j===i));L.disabled=i===0;R.disabled=i===D.length-1;}
 L.onclick=()=>go(i-1);R.onclick=()=>go(i+1);[...dots.children].forEach((b,j)=>b.onclick=()=>go(j));
 let x0=null;vw.addEventListener('touchstart',e=>x0=e.touches[0].clientX,{passive:true});
