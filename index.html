@@ -100,7 +100,7 @@ background:radial-gradient(50% 40% at 0% 100%,rgba(190,230,205,.45),transparent)
 .cs-hd svg path:first-child{fill:#0b4a31}.cs-hd svg circle[r="11"]{fill:#fdf8ee}
 .cs-tx{text-align:center;padding:18px 24px 30px;font-size:19px;font-weight:500;line-height:1.6;white-space:pre;overflow:hidden}
 .cs-ft{background:#0b6e47;color:#fff;padding:16px 26px;display:flex;flex-wrap:wrap;justify-content:center;gap:6px 26px;font-size:15px}
-.cs-ft div{display:flex;align-items:center;gap:8px}.cs-ft .lc{gap:6px 26px}.cs-ft svg{flex:none}.cs-ft.stk{flex-direction:column;align-items:center;gap:6px}.cs-ft.stk .lc{width:100%;justify-content:center;align-items:flex-start}.cs-ft.stk .lc>div{max-width:50%;align-items:flex-start}.cs-ft.stk .lc span{line-height:1.3}.cs-ft b{font-weight:700}
+.cs-ft div{display:flex;align-items:center;gap:8px}.cs-ft .lc{gap:6px 26px}.cs-ft svg{flex:none}.cs-ft.stk{flex-direction:column;align-items:center;gap:6px}.cs-ft.stk .lc{width:100%;justify-content:center;align-items:flex-start}.cs-ft.stk .lc>div{align-items:flex-start}.cs-ft.stk .lc>div:first-child{flex:0 1 auto;max-width:68%}.cs-ft.stk .lc>div:last-child{flex:none}.cs-ft.stk .lc span{line-height:1.3}.cs-ft b{font-weight:700}
 .cs-arr{flex:none;width:52px;height:52px;border-radius:50%;border:0;background:#f8c82e;color:#0b4a31;display:grid;place-items:center;padding:0;cursor:pointer;box-shadow:0 8px 16px rgba(0,0,0,.2)}
 .cs-arr:disabled{opacity:.35;cursor:default}
 .cs-count{text-align:center;margin-top:18px;font-size:16px;font-weight:600}.cs-count b{color:#f8c82e}
@@ -117,11 +117,12 @@ const ic=(p)=>`<svg viewBox="0 0 24 24" width="18" height="18">${p}</svg>`;
 const IP=ic('<circle cx="12" cy="8" r="4" fill="#f8c82e"/><path d="M4 21c0-4 4-7 8-7s8 3 8 7z" fill="#f8c82e"/>'),
 IS=ic('<path d="M5 21V5a2 2 0 0 1 2-2h7a2 2 0 0 1 2 2v16z" fill="#f8c82e"/><rect x="7.5" y="6" width="6" height="5" rx="1" fill="#0b6e47"/>'),
 IM=ic('<path d="M12 2a7 7 0 0 0-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 0 0-7-7z" fill="#f8c82e"/><circle cx="12" cy="9" r="2.6" fill="#0b6e47"/>');
+const nb=s=>s.replace(/(^|\s)(y|e|o|de|del|la|el|los|las|a|al|en|con|por|para) /gi,'$1$2\u00a0');
 const esc=s=>s.replace(/[&<>]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
 const root=document.getElementById('calaveritas'),tr=root.querySelector('.cs-track'),vw=root.querySelector('.cs-view'),
 dots=root.querySelector('.cs-dots'),L=root.querySelector('.cs-arr.l'),R=root.querySelector('.cs-arr.r');
 tr.innerHTML=D.map((d,i)=>`<article class="cs-k"><div class="cs-pp">${PIC}</div><div class="cs-hd"><span class="cs-num">${String(i+1).padStart(2,'0')}</span>${SK}</div>
-<div class="cs-tx">${esc(d.t)}</div><div class="cs-ft"><div class="nm">${IP}<b>${esc(d.n)}</b></div><div class="lc"><div>${IS}<span>${esc(d.e)}</span></div><div>${IM}<span>${esc(d.p)}</span></div></div></div></article>`).join('');
+<div class="cs-tx">${esc(d.t)}</div><div class="cs-ft"><div class="nm">${IP}<b>${nb(esc(d.n))}</b></div><div class="lc"><div>${IS}<span>${nb(esc(d.e))}</span></div><div>${IM}<span>${esc(d.p)}</span></div></div></div></article>`).join('');
 root.querySelector('.cs-n').textContent=D.length;
 dots.innerHTML=D.map((_,i)=>`<button aria-label="Calaverita ${i+1}"></button>`).join('');
 let i=0;const K=tr.children;
