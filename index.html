@@ -37,10 +37,10 @@
     }
     .boletin-wrapper iframe {
       position: absolute;
-      top: 0;
+      top: -100px;
       left: 0;
       width: 100%;
-      height: 100%;
+      height: calc(100% + 200px); /* sobra espacio arriba y abajo: la barra de Canva (lupa y ...) queda fuera de la vista */
       border: none;
     }
   </style>
@@ -90,7 +90,7 @@ background:radial-gradient(50% 40% at 0% 100%,rgba(190,230,205,.45),transparent)
 .cs-tg{position:absolute;top:0;left:32px;display:flex}.cs-tg span{font-size:clamp(11px,1.4vw,15px);font-weight:700;letter-spacing:.3px;height:44px;display:flex;align-items:center;border-radius:14px;white-space:nowrap}
 .cs-tg .a{background:#efc93a;color:#173f33;padding:0 52px 0 28px}.cs-tg .b{background:#dc5a2f;color:#fff;padding:0 30px;margin-left:-26px}
 .cs-h{font-size:clamp(32px,6vw,56px);font-weight:800;text-align:center;margin:0 0 28px;line-height:1.05}.cs-h em{font-style:normal;color:#f8c82e}
-.cs-stage{display:flex;align-items:center;gap:14px}
+.cs-stage{display:flex;align-items:center;gap:14px;max-width:900px;margin:0 auto}
 .cs-view{overflow:hidden;flex:1;border-radius:24px;transition:height .35s ease}
 .cs-track{display:flex;align-items:flex-start;transition:transform .45s cubic-bezier(.3,.7,.2,1)}
 .cs-k{flex:0 0 100%;display:flex;flex-direction:column;background:#fdf8ee;border-radius:24px;overflow:hidden;color:#0b4a31}
@@ -98,8 +98,8 @@ background:radial-gradient(50% 40% at 0% 100%,rgba(190,230,205,.45),transparent)
 .cs-hd{display:flex;justify-content:space-between;align-items:center;padding:14px 26px 0}
 .cs-num{font-size:40px;font-weight:800;color:#e8862c}
 .cs-hd svg path:first-child{fill:#0b4a31}.cs-hd svg circle[r="11"]{fill:#fdf8ee}
-.cs-tx{padding:10px 28px 26px;font-size:clamp(15px,2.1vw,19px);font-weight:500;line-height:1.6;white-space:pre-line}
-.cs-ft{background:#0b6e47;color:#fff;padding:16px 26px;display:flex;flex-wrap:wrap;gap:6px 26px;font-size:15px}
+.cs-tx{text-align:center;padding:10px 28px 26px;font-size:clamp(15px,2.1vw,19px);font-weight:500;line-height:1.6;white-space:pre-line}
+.cs-ft{background:#0b6e47;color:#fff;padding:16px 26px;display:flex;flex-wrap:wrap;justify-content:center;gap:6px 26px;font-size:15px}
 .cs-ft div{display:flex;align-items:center;gap:8px}.cs-ft b{font-weight:700}
 .cs-arr{flex:none;width:52px;height:52px;border-radius:50%;border:0;background:#f8c82e;color:#0b4a31;display:grid;place-items:center;padding:0;cursor:pointer;box-shadow:0 8px 16px rgba(0,0,0,.2)}
 .cs-arr:disabled{opacity:.35;cursor:default}
@@ -107,7 +107,7 @@ background:radial-gradient(50% 40% at 0% 100%,rgba(190,230,205,.45),transparent)
 .cs-dots{display:flex;justify-content:center;flex-wrap:wrap;gap:8px;margin-top:12px}
 .cs-dots button{width:10px;height:10px;border-radius:50%;border:0;padding:0;background:rgba(255,255,255,.4);cursor:pointer}
 .cs-dots button.on{background:#f8c82e;width:26px;border-radius:6px}
-@media(max-width:640px){.cs{padding:72px 12px 24px}.cs-dots{display:none!important}.cs-count{margin-top:16px;height:44px;line-height:44px}.cs-tg{left:12px}.cs-tg span{height:36px}.cs-tg .a{padding:0 40px 0 18px}.cs-tg .b{padding:0 18px}.cs-arr{position:absolute;bottom:24px;width:44px;height:44px}.cs-arr.l{left:16px}.cs-arr.r{right:16px}.cs-tg{left:16px}}
+@media(max-width:640px){.cint{padding:14px 10px 12px;border-radius:16px;margin-top:14px}.cint-p{font-size:10px;padding:8px 14px;white-space:nowrap}.cint-l{width:50%;margin-top:9px}.cs{padding:72px 12px 24px}.cs-dots{display:none!important}.cs-count{margin-top:16px;height:44px;line-height:44px}.cs-tg{left:12px}.cs-tg span{height:36px}.cs-tg .a{padding:0 40px 0 18px}.cs-tg .b{padding:0 18px}.cs-arr{position:absolute;bottom:24px;width:44px;height:44px}.cs-arr.l{left:16px}.cs-arr.r{right:16px}.cs-tg{left:16px}}
 </style>
 <script>
 (function(){
