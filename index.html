@@ -66,7 +66,64 @@
 
 <!-- ===== Sección Calaveritas Seguras (pegar al final del boletín) ===== -->
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&display=swap" rel="stylesheet">
-<div class="bol"><section id="calaveritas" class="cs">
+<div class="bol"><!-- ===== Sección Agentes 007 ===== -->
+<link href="https://fonts.googleapis.com/css2?family=Special+Elite&display=swap" rel="stylesheet">
+<section id="agentes" class="cs ag">
+<div class="cs-tg ag-tg"><span class="a">CULTURA SEGURA</span><span class="b">ID AGENTE 007</span></div>
+<h2 class="cs-h">Identidades clasificadas</h2>
+<p class="ag-sub">Nuestros agentes revelan sus nombres en clave, conoce las tarjetas más creativas de Agente 007.</p>
+<div class="ag-stage">
+ <button class="ag-arr l" aria-label="Anterior"><svg viewBox="0 0 24 24" width="26" height="26"><path d="M15.5 5l-7 7 7 7" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+ <div class="ag-view"><div class="ag-k"><img src="img/id1.jpg" alt="ID de Agente 007 1"></div><div class="ag-k"><img src="img/id2.jpg" alt="ID de Agente 007 2"></div><div class="ag-k"><img src="img/id3.jpg" alt="ID de Agente 007 3"></div><div class="ag-k"><img src="img/id4.jpg" alt="ID de Agente 007 4"></div><div class="ag-k"><img src="img/id5.jpg" alt="ID de Agente 007 5"></div></div>
+ <button class="ag-arr r" aria-label="Siguiente"><svg viewBox="0 0 24 24" width="26" height="26"><path d="M8.5 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+</div>
+<img class="ag-pj ella" src="img/agente-ella.png" alt=""><img class="ag-pj el" src="img/agente-el.png" alt="">
+<div class="ag-nav"><button class="ag-arr ag-n l" aria-label="Anterior"><svg viewBox="0 0 24 24" width="26" height="26"><path d="M15.5 5l-7 7 7 7" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></button><div class="ag-dots"><button aria-label="Tarjeta 1"></button><button aria-label="Tarjeta 2"></button><button aria-label="Tarjeta 3"></button><button aria-label="Tarjeta 4"></button><button aria-label="Tarjeta 5"></button></div><button class="ag-arr ag-n r" aria-label="Siguiente"><svg viewBox="0 0 24 24" width="26" height="26"><path d="M8.5 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></button></div>
+</section>
+<style>
+.ag{margin-bottom:3.8cqw;overflow:hidden;padding-bottom:8cqw!important}
+.ag-tg .a{background:#efc93a!important;color:#173f33!important}.ag-tg .b{background:#f39a1e!important;color:#173f33!important}
+
+.ag-sub{text-align:center;font-size:20px;font-weight:600;line-height:1.45;max-width:640px;margin:-1.2cqw auto 3cqw}
+.ag-stage{position:relative;margin:0 auto;z-index:5;height:min(620px,47cqw)}
+.ag-view{position:absolute;inset:0}
+.ag-k{position:absolute;top:50%;left:50%;width:min(440px,33cqw);aspect-ratio:.72;transition:transform .55s cubic-bezier(.3,.7,.2,1),opacity .55s,filter .55s;cursor:pointer;
+display:grid;place-items:center;background:#fff;border-radius:min(24px,2.2cqw);padding:0;overflow:hidden;box-shadow:0 18px 36px rgba(0,0,0,.28)}
+.ag-k img{width:100%;height:100%;object-fit:contain;display:block}
+.ag-k[data-p="0"]{transform:translate(-50%,-50%) scale(1);z-index:3;opacity:1}
+.ag-k[data-p="-1"]{transform:translate(-50%,-50%) translateX(-86%) scale(.46);z-index:2;opacity:.75;filter:brightness(.85)}
+.ag-k[data-p="1"]{transform:translate(-50%,-50%) translateX(86%) scale(.46);z-index:2;opacity:.75;filter:brightness(.85)}
+.ag-k[data-p="-2"]{transform:translate(-50%,-50%) translateX(-120%) scale(.45);z-index:1;opacity:0}
+.ag-k[data-p="2"]{transform:translate(-50%,-50%) translateX(120%) scale(.45);z-index:1;opacity:0}
+.ag-arr{position:absolute;top:50%;margin-top:-28px;width:56px;height:56px;border-radius:50%;border:0;background:#2f3433;color:#fff;display:grid;place-items:center;padding:0;cursor:pointer;box-shadow:0 6px 12px rgba(0,0,0,.3);z-index:5;transition:background .2s}.ag-arr svg{width:28px;height:28px}
+.ag-arr.l{left:0}.ag-arr.r{right:0}.ag-arr:hover{background:#e5533d}
+.ag-pj{position:absolute;bottom:0;height:min(860px,63cqw);z-index:6;pointer-events:none;transform-origin:bottom center;-webkit-mask:linear-gradient(#000 70%,transparent 100%);mask:linear-gradient(#000 70%,transparent 100%)}
+.ag-pj.ella{left:1.5cqw;bottom:-27cqw}.ag-pj.el{right:.5cqw;bottom:-27cqw}
+
+.ag-count{text-align:center;margin-top:18px;font-size:16px;font-weight:600}.ag-count b{color:#fff;background:#e5533d;border-radius:6px;padding:0 7px}
+.ag-dots{display:flex;justify-content:center;gap:8px}.ag-nav{display:flex;align-items:center;justify-content:center;gap:44px;margin-top:22px;position:relative;z-index:7}
+.ag-nav .ag-arr{position:static;margin:0;width:58px;height:58px}.ag-nav .ag-arr svg{width:28px;height:28px}.ag-stage>.ag-arr{display:none}
+.ag-dots button{width:10px;height:10px;border-radius:50%;border:0;padding:0;background:rgba(255,255,255,.4);cursor:pointer}
+.ag-dots button.on{background:#e5533d;width:26px;border-radius:6px}
+@media(max-width:640px){.ag-stage>.ag-arr{display:grid}.ag-nav .ag-arr{display:none}.ag-nav{margin-top:4cqw}.ag-sub{font-size:13px;margin:-1cqw 4cqw 4cqw}.ag-stage{height:100cqw}.ag-k{width:58cqw}
+.ag-k[data-p="-1"]{transform:translate(-50%,-50%) translateX(-92%) scale(.42)}.ag-k[data-p="1"]{transform:translate(-50%,-50%) translateX(92%) scale(.42)}
+.ag-arr{width:34px;height:34px;margin-top:-17px}.ag-arr svg{width:17px;height:17px}.ag-arr.l{left:calc(25% - 14.5cqw - 17px)}.ag-arr.r{right:calc(25% - 14.5cqw - 17px)}
+.ag-pj{height:90cqw}.ag-pj.ella{left:-10cqw;bottom:-46cqw}.ag-pj.el{right:-11cqw;bottom:-46cqw}.ag{padding-bottom:30cqw!important}.ag-dots{gap:6px;margin-top:4cqw}.ag-dots button{width:8px;height:8px}.ag-dots button.on{width:20px}}
+</style>
+<script>
+(function(){const r=document.getElementById('agentes'),K=[...r.querySelectorAll('.ag-k')],N=K.length,
+D=[...r.querySelectorAll('.ag-dots button')],P=[r.querySelector('.ag-pj.ella'),r.querySelector('.ag-pj.el')];let i=0;
+function go(n){i=(n%N+N)%N;K.forEach((k,j)=>{let d=j-i;if(d>N/2)d-=N;if(d<-N/2)d+=N;k.dataset.p=Math.max(-2,Math.min(2,d));});
+D.forEach((b,j)=>b.classList.toggle('on',j===i));
+}
+r.querySelectorAll('.ag-arr.l').forEach(b=>b.onclick=()=>go(i-1));r.querySelectorAll('.ag-arr.r').forEach(b=>b.onclick=()=>go(i+1));
+D.forEach((b,j)=>b.onclick=()=>go(j));K.forEach((k,j)=>k.onclick=()=>{if(j!==i)go(j);});
+let x0=null;const v=r.querySelector('.ag-view');v.addEventListener('touchstart',e=>x0=e.touches[0].clientX,{passive:true});
+v.addEventListener('touchend',e=>{if(x0===null)return;const dx=e.changedTouches[0].clientX-x0;if(Math.abs(dx)>40)go(i+(dx<0?1:-1));x0=null;});
+go(0);})();
+</script>
+<!-- ===== Fin sección Agentes 007 ===== -->
+<section id="calaveritas" class="cs">
 <div class="cs-tg"><span class="a">CULTURA SEGURA</span><span class="b">CALAVERITAS SEGURAS</span></div>
 <h2 class="cs-h">Te presentamos las<br><em>calaveritas seguras</em><br>que nos compartieron</h2>
 <div class="cs-stage">
