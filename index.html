@@ -81,6 +81,7 @@
 <div class="ag-nav"><button class="ag-arr ag-n l" aria-label="Anterior"><svg viewBox="0 0 24 24" width="26" height="26"><path d="M15.5 5l-7 7 7 7" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></button><div class="ag-dots"><button aria-label="Tarjeta 1"></button><button aria-label="Tarjeta 2"></button><button aria-label="Tarjeta 3"></button><button aria-label="Tarjeta 4"></button><button aria-label="Tarjeta 5"></button></div><button class="ag-arr ag-n r" aria-label="Siguiente"><svg viewBox="0 0 24 24" width="26" height="26"><path d="M8.5 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></button></div>
 </section>
 <style>
+html,body{overflow-x:hidden;overscroll-behavior-x:none}.bol{overflow-x:clip}.ag-stage{touch-action:pan-y}.ag-view{touch-action:pan-y}
 .cs.ag{margin-bottom:3.8cqw;overflow:hidden;padding-bottom:8cqw!important}
 .ag-tg .a{background:#efc93a!important;color:#173f33!important}.ag-tg .b{background:#f39a1e!important;color:#173f33!important}
 
@@ -118,7 +119,7 @@ D.forEach((b,j)=>b.classList.toggle('on',j===i));
 }
 r.querySelectorAll('.ag-arr.l').forEach(b=>b.onclick=()=>go(i-1));r.querySelectorAll('.ag-arr.r').forEach(b=>b.onclick=()=>go(i+1));
 D.forEach((b,j)=>b.onclick=()=>go(j));K.forEach((k,j)=>k.onclick=()=>{if(j!==i)go(j);});
-let x0=null;const v=r.querySelector('.ag-view');v.addEventListener('touchstart',e=>x0=e.touches[0].clientX,{passive:true});
+let x0=null;const v=r.querySelector('.ag-stage');v.addEventListener('touchstart',e=>x0=e.touches[0].clientX,{passive:true});
 v.addEventListener('touchend',e=>{if(x0===null)return;const dx=e.changedTouches[0].clientX-x0;if(Math.abs(dx)>40)go(i+(dx<0?1:-1));x0=null;});
 function ctr(){const h=r.querySelector('.cs-h'),tg=r.querySelector('.cs-tg'),sb=r.querySelector('.ag-sub'),st=r.querySelector('.ag-stage'),k=r.querySelector('.ag-k[data-p="0"]');if(!k)return;
 h.style.marginTop='0px';st.style.marginTop='0px';for(let n=0;n<3;n++){const g1=h.getBoundingClientRect().top-tg.getBoundingClientRect().bottom,g2=k.getBoundingClientRect().top-sb.getBoundingClientRect().bottom;
