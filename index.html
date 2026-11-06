@@ -82,7 +82,7 @@
 </section>
 <style>
 html,body{overflow-x:hidden;overscroll-behavior-x:none}.bol{overflow-x:clip}.ag-stage{touch-action:pan-y}.ag-view{touch-action:pan-y}
-.cs.ag{margin-bottom:3.8cqw;overflow:hidden;padding-bottom:8cqw!important}
+.cs.ag{margin-bottom:5cqw;overflow:hidden;padding-bottom:8cqw!important}
 .ag-tg .a{background:#efc93a!important;color:#173f33!important}.ag-tg .b{background:#f39a1e!important;color:#173f33!important}
 
 .ag-sub{text-align:center;font-size:20px;font-weight:600;line-height:1.45;max-width:640px;margin:-1.2cqw auto 3cqw}
@@ -121,10 +121,10 @@ r.querySelectorAll('.ag-arr.l').forEach(b=>b.onclick=()=>go(i-1));r.querySelecto
 D.forEach((b,j)=>b.onclick=()=>go(j));K.forEach((k,j)=>k.onclick=()=>{if(j!==i)go(j);});
 let x0=null;const v=r.querySelector('.ag-stage');v.addEventListener('touchstart',e=>x0=e.touches[0].clientX,{passive:true});
 v.addEventListener('touchend',e=>{if(x0===null)return;const dx=e.changedTouches[0].clientX-x0;if(Math.abs(dx)>40)go(i+(dx<0?1:-1));x0=null;});
-function ctr(){const h=r.querySelector('.cs-h'),tg=r.querySelector('.cs-tg'),sb=r.querySelector('.ag-sub'),st=r.querySelector('.ag-stage'),k=r.querySelector('.ag-k[data-p="0"]');if(!k)return;
-h.style.marginTop='0px';st.style.marginTop='0px';for(let n=0;n<3;n++){const g1=h.getBoundingClientRect().top-tg.getBoundingClientRect().bottom,g2=k.getBoundingClientRect().top-sb.getBoundingClientRect().bottom;
-st.style.marginTop=(parseFloat(st.style.marginTop)+(g1-g2))+'px';}}
-go(0);addEventListener('resize',ctr);addEventListener('load',ctr);r.querySelectorAll('.ag-k img').forEach(m=>m.complete||m.addEventListener('load',ctr));setTimeout(ctr,60);})();
+let lw=0;function ctr(f){if(!f&&innerWidth===lw)return;lw=innerWidth;const h=r.querySelector('.cs-h'),tg=r.querySelector('.cs-tg'),sb=r.querySelector('.ag-sub'),st=r.querySelector('.ag-stage'),k=r.querySelector('.ag-k');if(!k)return;
+st.style.marginTop='0px';const kt=()=>{const s2=st.getBoundingClientRect();return s2.top+s2.height/2-k.offsetHeight/2};
+const g1=h.getBoundingClientRect().top-tg.getBoundingClientRect().bottom,g2=kt()-sb.getBoundingClientRect().bottom;st.style.marginTop=(g1-g2)+'px';}
+go(0);addEventListener('resize',ctr);addEventListener('load',()=>ctr(1));r.querySelectorAll('.ag-k img').forEach(m=>m.complete||m.addEventListener('load',()=>ctr(1)));setTimeout(()=>ctr(1),60);})();
 </script>
 <!-- ===== Fin sección Agentes 007 ===== -->
 <section id="calaveritas" class="cs">
